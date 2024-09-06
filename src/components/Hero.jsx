@@ -5,7 +5,7 @@ import { AiFillLinkedin, AiFillGithub, AiFillInstagram } from "react-icons/ai";
 import { TypeAnimation } from "react-type-animation";
 import { DiJavascript1, DiReact, DiNodejsSmall, DiHtml5, DiCss3, DiSass, DiBootstrap, DiGithub, DiGit, DiGitCommit, DiJava, DiDart, DiMysql, DiLaravel } from "react-icons/di";
 import { motion } from "framer-motion";
-// import ShinyEffect from "./ShinyEffect";
+
 
 const Hero = () => {
   return (
@@ -15,8 +15,9 @@ const Hero = () => {
         animate={{ opacity: 1, scale: 1 }}
         transition={{
         duration: 2,
-        delay: 0.5,
+        delay: 0.4,
         ease: [0, 1, 0.8, 1.01]
+        // animasi 
       }} className="grid grid-cols-2 md:col-span-5 p-2 glass">
         <img className="w-[400px] " src={profilepic} alt="Profile Pic" />
         <div className="my-auto ml-2 flex-col text-gray-200">
