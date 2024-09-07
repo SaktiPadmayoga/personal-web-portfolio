@@ -20,7 +20,15 @@ const itemVariants = {
 
 const Skills = () => {
   return (
-    <div className="max-w-[1200px] pb-5 mx-auto pt-10 m:p-15 md:pt-10" id="home">
+    <motion.div 
+      initial={{ opacity: 0, scale: 0.5 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{
+        duration: 1,
+        delay: 0.2,
+        ease: [0, 1, 0.8, 1.01]
+      }}
+      className="max-w-[1200px] pb-5 mx-auto pt-10 m:p-15 md:pt-10" id="home">
       <div className="p-11 text-7xl text-center glass">
         <p className="text-gray-200 text-3xl font-bold mb-10">Things that I've worked with</p>
         <motion.div
@@ -134,7 +142,7 @@ const Skills = () => {
           </div>
 
       </div>
-    </div>
+    </motion.div>
   );
 };
 
