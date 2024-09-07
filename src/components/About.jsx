@@ -7,8 +7,12 @@ import { motion } from "framer-motion";
 
 const About = () => {
   return (
-    <div className="max-w-[1000px] mx-auto grid md:grid-cols-2 gap-6 p-10 md:mt-[85px] md:p-1">
-      <div className="grid md:col-span-1 gap-6" id="skills">
+    <div className="max-w-[1100px] mx-auto grid md:grid-cols-2 gap-6 p-10 md:mt-[85px] md:p-1">
+      <motion.div 
+      initial={{ opacity: 0, y: -50 }} // Start position above the view
+      animate={{ opacity: 1, y: 0 }} // End position in place
+      transition={{ duration: 1.5, delay :0.2, ease: 'easeOut' }} // Duration and easing
+      className="grid md:col-span-1 gap-6" id="skills">
       <div className="my-auto flex-col text-gray-200 p-2">
           <p className="text-3xl md:text-4xl font-bold py-1">
             <span>About</span> 
@@ -22,11 +26,15 @@ const About = () => {
           </p>
           <button className="mt-4 px-4 py-2 text-md font-bold text-gray-200 bg-primary-color rounded-lg">Download CV</button>
         </div>
-      </div>
+      </motion.div>
 
-      <div className="hidden md:p-2 glass md:flex justify-center items-center text-center" >
+      <motion.div 
+      initial={{ opacity: 0, y: -50 }} // Start position above the view
+      animate={{ opacity: 1, y: 0 }} // End position in place
+      transition={{ duration: 1.5, delay: 1.2, ease: 'easeOut' }} // Duration and easing
+      className="hidden md:p-2 glass md:flex justify-center items-center text-center" >
         <img className="w-[330px] h-auto  " src={profilepic} alt="Profile Pic" />
-      </div>
+      </motion.div>
 
     </div>
   )
