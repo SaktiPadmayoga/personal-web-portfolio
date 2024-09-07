@@ -9,7 +9,10 @@ const Footer = () => {
       duration: 4,
       delay: 0.8,
       ease: [0, 1, 0.2, 1.01]
-    }} className="max-w-[1200px] mx-auto h-10 justify-center items-center text-center pt-5">
+    }} 
+    className="fixed bottom-2 left-0 max-w-[1200px] mx-auto h-10 justify-center items-center text-center  right-0"
+    style={{ backdropFilter: "blur(30px)" }}
+    >
       <p className=" text-gray-400 text-sm font-semibold glass p-2">
         Created with 🩶 by
         <a href="https://www.instagram.com/saqtii" className="text-orange-500">
