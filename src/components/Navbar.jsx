@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 import logo from "../assets/logo--bg.png";
-import { NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom'; 
+import { motion } from "framer-motion";
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
@@ -15,7 +16,11 @@ const Navbar = () => {
   }
 
   return (
-    <div className="max-w-[1250px] h-24 mx-auto flex justify-between items-center text-lg pl-2 text-gray-200">
+    <motion.div 
+    initial={{ opacity: 0, y: -50 }} // Start position above the view
+      animate={{ opacity: 1, y: 0 }} // End position in place
+      transition={{ duration: 1, delay :0.2, ease: 'easeOut' }} // Duration and easing
+    className="max-w-[1250px] h-24 mx-auto flex justify-between items-center text-lg pl-2 text-gray-200">
       <a href="/"><img src={logo} alt="" className="w-16 pt-2"/></a>
 
       <ul className="hidden md:flex">
@@ -84,7 +89,7 @@ const Navbar = () => {
           </li>
         </ul>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
