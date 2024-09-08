@@ -1,10 +1,19 @@
 import React from 'react';
 import { AiFillHome, AiFillLinkedin, AiFillMail } from 'react-icons/ai';
+import { motion } from 'framer-motion';
 
 const Contact = () => {
   return (
-    <div className="max-w-[1200px] mx-auto grid md:grid-cols-10 gap-6 p-10 mt-10 md:mt-[70px] mb-7 md:glass" id="home">
-      <div className="md:col-span-4 p-4 md:p-8 glass py-8 md:my-5 md:ml-14 w-full">
+    <div className=" flex-col justify-center items-center min-h-screen md:min-h-[80vh] max-w-[1200px] mx-auto my-auto grid md:grid-cols-10 gap-6 p-10 mb-7 md:glass" id="home">
+      <motion.div 
+      initial={{ opacity: 0, scale: 0.5 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{
+        duration: 1.5,
+        delay: 0.2,
+        ease: [0, 0.8, 0.8, 1.01]
+      }}
+      className="md:col-span-4 p-4 md:p-8 glass py-8 md:my-5 md:ml-14 w-full">
         <div className="flex-col text-gray-200 p-2">
           <p className="text-2xl md:text-4xl font-bold py-1">
             <span>Contact Me</span> 
@@ -34,9 +43,17 @@ const Contact = () => {
             </p>
           </div>
         </div>
-      </div>
+      </motion.div>
 
-      <div className="md:col-span-6 p-4 md:ml-9 flex text-black">
+      <motion.div 
+      initial={{ opacity: 0, scale: 0.5 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{
+        duration: 1.5,
+        delay: 0.6,
+        ease: [0, 1, 0.8, 1.01]
+      }}
+      className="md:col-span-6 p-4 md:ml-9 flex text-black">
         <form action="https://getform.io/f/bnlekwkb" method="POST" className='w-full p-5 md:p-10'>
           <input 
             type="text"
@@ -60,13 +77,13 @@ const Contact = () => {
             name='message'
             className='mb-2 w-full rounded-md border-gray-400 bg-gray-100 py-2 pl-2 pr-4'
           />
-          <div className='flex justify-end'>
+          <div className='flex justify-evenly'>
             <button type='submit' className="md:w-full px-4 py-2 text-md font-bold text-gray-200 bg-primary-color rounded-lg">
               Send message 🚀
             </button>
           </div>
         </form>
-      </div>
+      </motion.div>
     </div>
   )
 }
