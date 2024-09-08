@@ -28,7 +28,7 @@ const Skills = () => {
         delay: 0.2,
         ease: [0, 1, 0.8, 1.01]
       }}
-      className="max-w-[1200px] pb-5 mx-auto pt-10 m:p-15 md:pt-10" id="home">
+      className="flex-col justify-center items-center min-h-screen md:min-h-[80vh] max-w-[1200px] pb-5 mx-auto pt-10 md:p-0 md:pt-10 p-7" id="home">
       <div className="p-11 text-7xl text-center glass">
         <p className="text-gray-200 text-3xl font-bold mb-10">Things that I've worked with</p>
         <motion.div

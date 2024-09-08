@@ -6,8 +6,8 @@ import project3 from "../assets/project3.png";
 import project4 from "../assets/project4.png";
 import project5 from "../assets/project5.png";
 import project6 from "../assets/project6.png";
-import arrow from "../assets/arrow.png";
 import { AiFillGithub } from 'react-icons/ai'
+import { motion } from 'framer-motion';
 
 const projects = [
     {
@@ -67,7 +67,11 @@ const Work = () => {
 
     <div className='h-[75vh] mt-6 mb-3 max-w-[1200px] pr-4 md:pr-0 md:mx-auto grid grid-cols-8 gap-6'>
 
-      <div className='z-10 col-span-3 grid place-items-center grid-cols-1 relative'>
+      <motion.div 
+      initial={{ opacity: 0, y: -50 }} // Start position above the view
+      animate={{ opacity: 1, y: 0 }} // End position in place
+      transition={{ duration: 1.5, delay :0.2, ease: 'easeOut' }} // Duration and easing
+      className='z-10 col-span-3 grid place-items-center grid-cols-1 relative'>
         <p className='ml-10 text-gray-200 text-lg md:text-2xl '><span className='text-xl md:text-3xl font-bold'>Latest project that I've built.
         </span> More on my <span>
             <a href="https://github.com/SaktiPadmayoga" target="_blank" rel="noopener noreferrer" className=' text:lg md:text-2xl text-orange-600 glass py-1 px-2 rounded-none hover:bg-slate-700 transition duration-300 inline-block mt-2'>Github</a>
@@ -75,9 +79,8 @@ const Work = () => {
         </p>
 
 
-        <p className='text-gray-200 font-bold text-lg mt-3 md:mt-0 md:text-3xl -skew-y-6 '>Select Project</p>
+        <p className='text-gray-200 font-bold text-lg mt-3 md:mt-0 md:text-3xl -skew-y-6 '>Select Project : </p>
 
-        <img src={arrow} className='absolute w-7 top-[200px] right-0 left-36 md:w-[50px] md:top-[165px] md:left-80' />
 
         <ul className='ml-6 flex flex-row text-lg md:flex-col gap-6 flex-wrap justify-center md:gap-1
         space-y-2 md:space-y-4 md:text-2xl'>
@@ -91,9 +94,13 @@ const Work = () => {
             </li>
           ))}
         </ul>
-      </div>
+      </motion.div>
 
-      <div className='z-5 glass w-full col-span-5 justify-center'>
+      <motion.div 
+      initial={{ opacity: 0, y: -50 }} // Start position above the view
+      animate={{ opacity: 1, y: 0 }} // End position in place
+      transition={{ duration: 1.5, delay :0.8, ease: 'easeOut' }} // Duration and easing
+      className='z-5 glass w-full col-span-5 justify-center'>
         <div className='w-full h-[400px] md:h-[450px]'>
           <img src={projects[currentProject].img} alt={projects[currentProject].title} className='w-full h-full object-cover  p-6 '/>
         </div>
@@ -105,7 +112,7 @@ const Work = () => {
           <a href={projects[currentProject].links.github} className=' text-2xl md:text-3xl px-4 py-2 text-gray-200 rounded-lg glass hover:bg-slate-700 transition duration-300'><AiFillGithub/></a>
         </div>
 
-      </div>
+      </motion.div>
 
     </div>
   )
