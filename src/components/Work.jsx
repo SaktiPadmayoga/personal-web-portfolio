@@ -65,7 +65,7 @@ const Work = () => {
 
   return (
 
-    <div className='h-[75vh] mt-6 mb-40 md:mb-6 max-w-[1200px] pr-4 md:pr-0 md:mx-auto grid grid-cols-8 gap-6'>
+    <div className='h-[75vh] mt-6 mb-24 md:mb-6 max-w-[1200px] pr-6 md:pr-0 md:mx-auto grid grid-cols-8 gap-6'>
 
       <motion.div 
       initial={{ opacity: 0, y: -50 }} // Start position above the view
