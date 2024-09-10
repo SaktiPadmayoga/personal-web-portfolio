@@ -22,20 +22,21 @@ const Hero = () => {
         exit={{ opacity: 0, x: -100, transition: { delay: 0.3, duration: 0.5, ease: "easeOut" }}}
         exitTransition={{ duration: 0.1, ease: "easeOut" }}
         
-        className="grid grid-cols-2 md:col-span-5 p-2 md:m-0 glass">
+        className="grid grid-cols-2 md:col-span-5 py-2 pl-2 pr-0 md:m-0 glass">
         <img className="w-[400px] " src={profilepic} alt="Profile Pic" />
         <div className="my-auto ml-2 flex-col text-gray-200">
-          <p className="text-xl md:text-3xl font-bold py-1">
+          <p className="text-lg md:text-3xl font-bold py-1">
             Hi! I am Sakti Padmayoga
+            
+            <div className="text-2xl md:text-2xl">
             <br /> a/an <br className="sm:hidden"/>
-            <div className="text-lg">
               <TypeAnimation sequence={[" Web Developer", 1000, " Software Developer", 1000, " UI Designer", 1000]} wrapper="span" speed={50} repeat={Infinity} />  
             </div>
             
           </p>
-          <p className="text-lg md:text:2xl text-gray-400 font-semibold mt-2 hidden">with 0 year of experience :D.</p>
+          <p className="text-lg md:text:2xl text-gray-400 font-semibold mt-2 sm:hidden">with 0 year of experience :D.</p>
           <button className="mt-4 px-4 py-2 text-sm font-bold text-gray-200 bg-primary-color rounded-lg ">Download CV  💌</button>
-          <button className="mt-4 ml-3 px-4 py-2 text-sm font-bold text-gray-200 bg-zinc-800 rounded-lg hover:bg-slate-600 transition duration-300">
+          <button className="mt-4 md:ml-3 px-4 py-2 text-sm font-bold text-gray-200 bg-zinc-800 rounded-lg hover:bg-slate-600 transition duration-300">
             <a href="/about">About Me →</a>
           </button>
         </div>

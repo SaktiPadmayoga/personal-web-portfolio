@@ -65,7 +65,7 @@ const Work = () => {
 
   return (
 
-    <div className='h-[75vh] mt-6 mb-24 md:mb-6 max-w-[1200px] pr-4 md:pr-0 md:mx-auto grid grid-cols-8 gap-6'>
+    <div className='h-[75vh] mt-6 mb-40 md:mb-6 max-w-[1200px] pr-4 md:pr-0 md:mx-auto grid grid-cols-8 gap-6'>
 
       <motion.div 
       initial={{ opacity: 0, y: -50 }} // Start position above the view
@@ -84,7 +84,7 @@ const Work = () => {
         <p className='text-gray-200 font-bold text-lg mt-3 md:mt-0 mb-3 md:mb-0 md:text-3xl -skew-y-6  ml-8'>Select Project : </p>
 
 
-        <ul className='ml-6 flex flex-row text-sm md:flex-col gap-6 flex-wrap justify-center md:gap-1
+        <ul className='ml-6 flex flex-row text-sm md:flex-col md:gap-6 flex-wrap justify-center gap-2
         space-y-1 md:space-y-4 md:text-2xl'>
           {projects.map((project, index) => (
             <li
