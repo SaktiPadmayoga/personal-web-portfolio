@@ -70,7 +70,9 @@ const Work = () => {
       <motion.div 
       initial={{ opacity: 0, y: -50 }} // Start position above the view
       animate={{ opacity: 1, y: 0 }} // End position in place
-      transition={{ duration: 1.5, delay :0.2, ease: 'easeOut' }} // Duration and easing
+      transition={{ duration: 1, delay :1.1, ease: 'easeOut' }} // Duration and easing
+      exit={{ opacity: 0, x:-50, transition: { delay: 0, duration: 0.5, ease: "easeOut" }}}
+      exitTransition={{ duration: 0.5, ease: "easeOut", delay:0 }}
       className='z-10 col-span-3 grid place-items-center grid-cols-1 relative'>
         <p className='ml-10 text-gray-200 text-lg md:text-2xl '><span className='text-xl md:text-3xl font-bold'>Latest project that I've built.
         </span> More on my <span>
@@ -99,7 +101,9 @@ const Work = () => {
       <motion.div 
       initial={{ opacity: 0, y: -50 }} // Start position above the view
       animate={{ opacity: 1, y: 0 }} // End position in place
-      transition={{ duration: 1.5, delay :0.8, ease: 'easeOut' }} // Duration and easing
+      transition={{ duration: 1, delay :1.5, ease: 'easeOut' }} // Duration and easing
+      exit={{ opacity: 0, x:50, transition: { delay: 0, duration: 0.5, ease: "easeOut" }}}
+      exitTransition={{ duration: 0.5, ease: "easeOut", delay:0 }}
       className='z-5 glass w-full col-span-5 justify-center'>
         <div className='w-full h-[400px] md:h-[450px]'>
           <img src={projects[currentProject].img} alt={projects[currentProject].title} className='w-full h-full object-cover  p-6 '/>

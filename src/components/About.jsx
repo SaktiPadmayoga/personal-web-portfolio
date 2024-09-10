@@ -9,9 +9,15 @@ const About = () => {
   return (
     <div className="max-w-[1100px] mx-auto grid md:grid-cols-2 gap-6 p-10 md:mt-[85px] md:p-1">
       <motion.div 
-      initial={{ opacity: 0, y: -50 }} // Start position above the view
-      animate={{ opacity: 1, y: 0 }} // End position in place
-      transition={{ duration: 1.5, delay :0.2, ease: 'easeOut' }} // Duration and easing
+      initial={{ opacity: 0, x: -50 }} 
+      animate={{ opacity: 1, x: 0 }} 
+      transition={{
+        duration: 0.6,
+        delay: 1.7,
+        ease: [0.25, 0.1, 0.25, 1]
+      }}  
+      exit={{ opacity: 0, x:-50, transition: { delay: 0, duration: 0.5, ease: "easeOut" }}}
+      exitTransition={{ duration: 0.5, ease: "easeOut", delay:0 }}
       className="grid md:col-span-1 gap-6" id="skills">
       <div className="my-auto flex-col text-gray-200 p-2">
           <p className="text-3xl md:text-4xl font-bold py-1">
@@ -29,9 +35,15 @@ const About = () => {
       </motion.div>
 
       <motion.div 
-      initial={{ opacity: 0, y: -50 }} // Start position above the view
-      animate={{ opacity: 1, y: 0 }} // End position in place
-      transition={{ duration: 1.5, delay: 1.2, ease: 'easeOut' }} // Duration and easing
+      initial={{ opacity: 0, x: 50 }} 
+      animate={{ opacity: 1, x: 0 }}
+      transition={{
+        duration: 0.6,
+        delay: 2,
+        ease: [0.25, 0.1, 0.25, 1]
+      }}  
+      exit={{ opacity: 0, x:50, transition: { delay: 0.3, duration: 0.5, ease: "easeOut" }}}
+      exitTransition={{ duration: 0.5, ease: "easeOut", delay:0 }}
       className="hidden md:p-2 glass md:flex justify-center items-center text-center" >
         <img className="w-[330px] h-auto  " src={profilepic} alt="Profile Pic" />
       </motion.div>

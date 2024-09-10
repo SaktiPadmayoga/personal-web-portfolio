@@ -13,6 +13,8 @@ const Contact = () => {
         delay: 0.2,
         ease: [0, 0.8, 0.8, 1.01]
       }}
+      exit={{ opacity: 0, x:-50, transition: { delay: 0, duration: 0.5, ease: "easeOut" }}}
+      exitTransition={{ duration: 0.5, ease: "easeOut", delay:0 }}
       className="md:col-span-4 p-4 md:p-8 glass py-8 md:my-5 md:ml-14 w-full">
         <div className="flex-col text-gray-200 p-2">
           <p className="text-2xl md:text-4xl font-bold py-1">
@@ -53,6 +55,8 @@ const Contact = () => {
         delay: 0.6,
         ease: [0, 1, 0.8, 1.01]
       }}
+      exit={{ opacity: 0, x:50, transition: { delay: 0, duration: 0.5, ease: "easeOut" }}}
+      exitTransition={{ duration: 0.5, ease: "easeOut", delay:0 }}
       className="md:col-span-6 p-4 md:ml-9 flex text-black">
         <form action="https://getform.io/f/bnlekwkb" method="POST" className='w-full p-5 md:p-10'>
           <input 

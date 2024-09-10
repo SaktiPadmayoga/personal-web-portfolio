@@ -11,11 +11,16 @@ const Education = () => {
   return (
     <motion.div
       ref={ref}
-      initial={{ opacity: 0, y: -50 }} // Start state
-      animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 50 }} // Animate based on inView
-      transition={{ duration: 1, delay: 2.2, ease: 'easeOut' }} // Duration and easing
+      initial={{ opacity: 0, y: -50 }}
+      animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 50 }} 
+      transition={{
+        duration: 0.7,
+        delay: 1.2,
+        ease: [0.25, 0.1, 0.25, 1]
+      }} 
+      exit={{ opacity: 0, x:-50, transition: { delay: 0, duration: 0.5, ease: "easeOut" }}}
+      exitTransition={{ duration: 0.5, ease: "easeOut", delay:0 }}
       className="max-w-[1100px] mx-auto grid md:grid-cols-2 gap-6 pl-10 md:mt-[110px] md:pt-10"
-      id="education" // Changed id to be unique
     >
       <p className="text-3xl md:text-4xl font-bold primary-color">
         Education

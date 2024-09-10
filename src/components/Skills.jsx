@@ -1,14 +1,19 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import tail from "../assets/tail.png";
-import { DiHtml5, DiCss3, DiSass, DiBootstrap, DiJavascript1, DiReact, DiNodejsSmall, DiJava, DiLaravel, DiMysql, DiDart, DiGithub, DiGit } from "react-icons/di";
+import { DiHtml5, DiCss3, DiSass, DiBootstrap, DiJavascript1, DiReact, DiNodejsSmall, DiJava, DiLaravel, DiMysql, DiDart, DiGithub, DiGit, DiPhp, DiJsBadge, DiJavascript, DiMongodb, DiVisualstudio } from "react-icons/di";
 import { motion } from "framer-motion";
+import { BiLogoFigma, BiLogoFlutter, BiLogoGithub, BiLogoPhp, BiLogoTailwindCss, BiLogoVisualStudio } from "react-icons/bi";
 
 const containerVariants = {
-  hidden: { opacity: 0 },
+  hidden: { opacity: 0, scale: 0.8 },
   show: {
     opacity: 1,
+    scale: 1,
     transition: {
-      staggerChildren: 0.2, // Controls the delay between animations
+      delay: 0.5,
+      duration: 1, // Duration for the parent div
+      ease: "easeInOut",
+      staggerChildren: 0.2 ,
     },
   },
 };
@@ -19,23 +24,42 @@ const itemVariants = {
 };
 
 const Skills = () => {
+  const [showItems, setShowItems] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowItems(true);
+    }, 2000); // Adjust this value to control the delay
+
+    return () => clearTimeout(timer); // Clean up timer on component unmount
+  }, []);
+
   return (
-    <motion.div 
-      initial={{ opacity: 0, scale: 0.5 }}
+    <motion.div
+      onAnimationComplete={() => setShowItems(true)}
+      initial={{ opacity: 0, scale: 0.8 }}
       animate={{ opacity: 1, scale: 1 }}
-      transition={{
-        duration: 1,
-        delay: 0.2,
-        ease: [0, 1, 0.8, 1.01]
+      transition= {{
+        ease: "easeInOut",
+        staggerChildren: 0.2,
+        duration :1,
+        delay: 1.5,
       }}
-      className="flex-col justify-center items-center min-h-screen md:min-h-[80vh] max-w-[1200px] pb-5 mx-auto pt-10 md:p-0 md:pt-10 p-7" id="home">
+      exit={{ opacity: 0, transition: { delay: 0.3, duration: 0.5, ease: "easeOut" }}}
+      exitTransition={{ duration: 0.1, ease: "easeOut" }}
+      className="flex-col justify-center items-center h-[75vh] max-w-[1200px] pb-5 mx-auto my-auto pt-10 md:p-7 md:pt-10 p-7 mb-48"
+      id="home"
+    >
       <div className="p-11 text-7xl text-center glass">
         <p className="text-gray-200 text-3xl font-bold mb-10">Things that I've worked with</p>
+
         <motion.div
+        onAnimationComplete={() => setShowItems(true)}
           className="hidden sm:grid sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 text-center justify-center gap-8"
           variants={containerVariants}
           initial="hidden"
-          animate="show"
+          animate={showItems ? "show" : "hidden"}
+          transition={{ delay: 0.4 }}
         >
           <motion.div variants={itemVariants} className="p-4 glass hover:bg-slate-700 transition duration-300">
             <DiHtml5 className="flex text-orange-600 item-center m-auto" />
@@ -46,7 +70,7 @@ const Skills = () => {
             <p className="m-auto mt-2 text-gray-300">CSS</p>
           </motion.div>
           <motion.div variants={itemVariants} className="p-4 glass hover:bg-slate-700 transition duration-300">
-            <DiJavascript1 className="flex text-yellow-600 item-center m-auto" />
+            <DiJavascript className="flex text-yellow-600 item-center m-auto" />
             <p className="m-auto mt-2 text-gray-300">JavaScript</p>
           </motion.div>
           <motion.div variants={itemVariants} className="p-4 glass hover:bg-slate-700 transition duration-300">
@@ -54,22 +78,20 @@ const Skills = () => {
             <p className="m-auto mt-2 text-gray-300">Bootstrap</p>
           </motion.div>
           <motion.div variants={itemVariants} className="p-4 glass hover:bg-slate-700 transition duration-300">
-            <DiSass className="flex text-pink-600 item-center m-auto" />
-            <p className="m-auto mt-2 text-gray-300">Sass</p>
+            <DiPhp className="flex text-indigo-400 item-center m-auto" />
+            <p className="m-auto mt-2 text-gray-300">PHP</p>
           </motion.div>
           <motion.div variants={itemVariants} className="p-4 glass hover:bg-slate-700 transition duration-300">
-            <div className="flex justify-center items-center mt-3">
-              <img className="w-20 h-12" src={tail} alt="Tailwind" />
-            </div>
-            <p className="mt-5 text-gray-300">Tailwind</p>
+            <BiLogoTailwindCss className="flex text-teal-500 item-center m-auto" />
+            <p className="m-auto mt-2 text-gray-300">Tailwind</p>
           </motion.div>
           <motion.div variants={itemVariants} className="p-4 glass hover:bg-slate-700 transition duration-300">
             <DiReact className="flex text-cyan-500 item-center m-auto" />
             <p className="m-auto mt-2 text-gray-300">React</p>
           </motion.div>
           <motion.div variants={itemVariants} className="p-4 glass hover:bg-slate-700 transition duration-300">
-            <DiNodejsSmall className="flex text-green-500 item-center m-auto" />
-            <p className="m-auto mt-2 text-gray-300">Node.js</p>
+            <DiMongodb className="flex text-green-500 item-center m-auto" />
+            <p className="m-auto mt-2 text-gray-300">MongoDB</p>
           </motion.div>
           <motion.div variants={itemVariants} className="p-4 glass hover:bg-slate-700 transition duration-300">
             <DiJava className="flex text-orange-700 item-center m-auto" />
@@ -84,18 +106,31 @@ const Skills = () => {
             <p className="m-auto mt-2 text-gray-300">MySQL</p>
           </motion.div>
           <motion.div variants={itemVariants} className="p-4 glass hover:bg-slate-700 transition duration-300">
-            <DiDart className="flex text-sky-400 item-center m-auto" />
+            <DiDart className="flex text-blue-600 item-center m-auto" />
             <p className="m-auto mt-2 text-gray-300">Dart</p>
           </motion.div>
           <motion.div variants={itemVariants} className="p-4 glass hover:bg-slate-700 transition duration-300">
-            <DiGithub className="flex text-gray-500 item-center m-auto" />
+            <BiLogoFlutter className="flex text-sky-400 item-center m-auto" />
+            <p className="m-auto mt-2 text-gray-300">Flutter</p>
+          </motion.div>
+          <motion.div variants={itemVariants} className="p-4 glass hover:bg-slate-700 transition duration-300">
+            <BiLogoGithub className="flex text-gray-500 item-center m-auto" />
             <p className="m-auto mt-2 text-gray-300">GitHub</p>
           </motion.div>
           <motion.div variants={itemVariants} className="p-4 glass hover:bg-slate-700 transition duration-300">
             <DiGit className="flex text-red-500 item-center m-auto" />
             <p className="m-auto mt-2 text-gray-300">Git</p>
           </motion.div>
+          <motion.div variants={itemVariants} className="p-4 glass hover:bg-slate-700 transition duration-300">
+            <DiVisualstudio className="flex text-blue-500 item-center m-auto" />
+            <p className="m-auto mt-2 text-gray-300">VS Code</p>
+          </motion.div>
+          <motion.div variants={itemVariants} className="p-4 glass hover:bg-slate-700 transition duration-300">
+            <BiLogoFigma className="flex text-orange-400 item-center m-auto" />
+            <p className="m-auto mt-2 text-gray-300">Figma</p>
+          </motion.div>
         </motion.div>
+
         <div className="sm:hidden grid grid-cols-4 text-center gap-2">
             <div className="flex justify-center items-center">
               <DiHtml5 className="text-orange-600" />
@@ -104,22 +139,22 @@ const Skills = () => {
               <DiCss3 className="text-blue-600" />
             </div>
             <div className="flex justify-center items-center">
-              <DiSass className="text-pink-600" />
+              <DiJavascript className="text-yellow-500" />
             </div>
             <div className="flex justify-center items-center">
               <DiBootstrap className="text-purple-600" />
             </div>
             <div className="flex justify-center items-center">
-              <DiJavascript1 className="text-yellow-500" />
+              <BiLogoPhp className="text-indigo-400" />
             </div>
             <div className="flex justify-center items-center">
-              <DiReact className="text-blue-500" />
+              <BiLogoTailwindCss className="text-teal-500" />
             </div>
             <div className="flex justify-center items-center">
-              <DiNodejsSmall className="text-green-500" />
+              <DiReact className="text-cyan-500" />
             </div>
             <div className="flex justify-center items-center">
-              <img className="max-w-16 pt-4 pl-1" src={tail} alt="Tailwind CSS" />
+              <DiMongodb className="text-green-500" />
             </div>
             <div className="flex justify-center items-center">
               <DiJava className="text-orange-700" />
@@ -131,16 +166,24 @@ const Skills = () => {
               <DiMysql className="text-sky-800" />
             </div>
             <div className="flex justify-center items-center">
-              <DiDart className="text-sky-400" />
+              <DiDart className="text-blue-600" />
             </div>
             <div className="flex justify-center items-center">
-              <DiGithub className="text-gray-500" />
+              <BiLogoFlutter className="text-sky-400" />
+            </div>
+            <div className="flex justify-center items-center">
+              <BiLogoGithub className="text-gray-500" />
             </div>
             <div className="flex justify-center items-center">
               <DiGit className="text-red-500" />
             </div>
-          </div>
-
+            <div className="flex justify-center items-center">
+              <BiLogoVisualStudio className="text-blue-500" />
+            </div>
+            <div className="flex justify-center items-center">
+              <BiLogoFigma className="text-orange-400" />
+            </div>
+        </div>
       </div>
     </motion.div>
   );
