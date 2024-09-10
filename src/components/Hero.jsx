@@ -28,8 +28,10 @@ const Hero = () => {
           <p className="text-xl md:text-3xl font-bold py-1">
             Hi! I am Sakti Padmayoga
             <br /> a/an <br className="sm:hidden"/>
-           
-            <TypeAnimation sequence={[" Web Developer", 1000, " Software Developer", 1000, " UI Designer", 1000]} wrapper="span" speed={50} repeat={Infinity} />
+            <div className="text-lg">
+              <TypeAnimation sequence={[" Web Developer", 1000, " Software Developer", 1000, " UI Designer", 1000]} wrapper="span" speed={50} repeat={Infinity} />  
+            </div>
+            
           </p>
           <p className="text-lg md:text:2xl text-gray-400 font-semibold mt-2 hidden">with 0 year of experience :D.</p>
           <button className="mt-4 px-4 py-2 text-sm font-bold text-gray-200 bg-primary-color rounded-lg ">Download CV  💌</button>

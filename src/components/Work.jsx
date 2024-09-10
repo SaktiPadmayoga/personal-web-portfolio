@@ -81,11 +81,11 @@ const Work = () => {
         </p>
 
 
-        <p className='text-gray-200 font-bold text-lg mt-3 md:mt-0 md:text-3xl -skew-y-6  ml-8'>Select Project : </p>
+        <p className='text-gray-200 font-bold text-lg mt-3 md:mt-0 mb-3 md:mb-0 md:text-3xl -skew-y-6  ml-8'>Select Project : </p>
 
 
-        <ul className='ml-6 flex flex-row text-base md:flex-col gap-6 flex-wrap justify-center md:gap-1
-        space-y-2 md:space-y-4 md:text-2xl'>
+        <ul className='ml-6 flex flex-row text-sm md:flex-col gap-6 flex-wrap justify-center md:gap-1
+        space-y-1 md:space-y-4 md:text-2xl'>
           {projects.map((project, index) => (
             <li
               key={index}
