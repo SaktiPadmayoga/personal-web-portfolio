@@ -10,7 +10,7 @@ import { BiLogoFlutter, BiLogoTailwindCss } from "react-icons/bi";
 
 const Hero = () => {
   return (
-      <div className=" flex-col justify-center items-center min-h-screen md:min-h-[80vh] max-w-[1200px] mx-auto grid md:grid-cols-8 gap-6 p-5 mb-5 md:p-0 md:mt-3 h-full" id="home">
+      <div className=" flex-col justify-center items-center min-h-screen md:min-h-[80vh] max-w-[1200px] mx-auto grid md:grid-cols-8 gap-6 p-5 mb-5 md:px-5 md:mt-3 h-full" id="home">
       <motion.div 
         initial={{ opacity: 0, scale: 0.7 }}
         animate={{ opacity: 1, scale: 1 }}
@@ -27,7 +27,8 @@ const Hero = () => {
         <div className="my-auto ml-2 flex-col text-gray-200">
           <p className="text-xl md:text-3xl font-bold py-1">
             Hi! I am Sakti Padmayoga
-            <br /> a/an
+            <br /> a/an <br className="sm:hidden"/>
+           
             <TypeAnimation sequence={[" Web Developer", 1000, " Software Developer", 1000, " UI Designer", 1000]} wrapper="span" speed={50} repeat={Infinity} />
           </p>
           <p className="text-lg md:text:2xl text-gray-400 font-semibold mt-2 hidden">with 0 year of experience :D.</p>
