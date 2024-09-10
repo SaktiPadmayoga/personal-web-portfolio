@@ -29,7 +29,7 @@ const Hero = () => {
             Hi Fellas!
             <br /> I am Sakti Padmayoga
             <div className="text-base md:text-2xl">
-            <br /> a/an <br className="sm:hidden"/>
+            a/an <br className="sm:hidden"/>
               <TypeAnimation sequence={[" Web Developer", 1000, " Software Developer", 1000, " UI Designer", 1000]} wrapper="span" speed={50} repeat={Infinity} />  
             </div>
             
