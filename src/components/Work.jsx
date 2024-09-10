@@ -65,7 +65,7 @@ const Work = () => {
 
   return (
 
-    <div className='h-[75vh] mt-6 mb-10 md:mb-6 max-w-[1200px] pr-4 md:pr-0 md:mx-auto grid grid-cols-8 gap-6'>
+    <div className='h-[75vh] mt-6 mb-24 md:mb-6 max-w-[1200px] pr-4 md:pr-0 md:mx-auto grid grid-cols-8 gap-6'>
 
       <motion.div 
       initial={{ opacity: 0, y: -50 }} // Start position above the view
@@ -74,17 +74,17 @@ const Work = () => {
       exit={{ opacity: 0, x:-50, transition: { delay: 0, duration: 0.5, ease: "easeOut" }}}
       exitTransition={{ duration: 0.5, ease: "easeOut", delay:0 }}
       className='z-10 col-span-3 grid place-items-center grid-cols-1 relative'>
-        <p className='ml-10 text-gray-200 text-lg md:text-2xl '><span className='text-xl md:text-3xl font-bold'>Latest project that I've built.
+        <p className='ml-8 text-gray-200 text-lg md:text-2xl '><span className='text-xl md:text-3xl font-bold'>Latest project that I've built.
         </span> More on my <span>
             <a href="https://github.com/SaktiPadmayoga" target="_blank" rel="noopener noreferrer" className=' text:lg md:text-2xl text-orange-600 glass py-1 px-2 rounded-none hover:bg-slate-700 transition duration-300 inline-block mt-2'>Github</a>
           </span>
         </p>
 
 
-        <p className='text-gray-200 font-bold text-lg mt-3 md:mt-0 md:text-3xl -skew-y-6  ml-6'>Select Project : </p>
+        <p className='text-gray-200 font-bold text-lg mt-3 md:mt-0 md:text-3xl -skew-y-6  ml-8'>Select Project : </p>
 
 
-        <ul className='ml-6 flex flex-row text-lg md:flex-col gap-6 flex-wrap justify-center md:gap-1
+        <ul className='ml-6 flex flex-row text-md md:flex-col gap-6 flex-wrap justify-center md:gap-1
         space-y-2 md:space-y-4 md:text-2xl'>
           {projects.map((project, index) => (
             <li
