@@ -22,10 +22,10 @@ const Hero = () => {
         exit={{ opacity: 0, x: -100, transition: { delay: 0.3, duration: 0.5, ease: "easeOut" }}}
         exitTransition={{ duration: 0.1, ease: "easeOut" }}
         
-        className="grid grid-cols-2 md:col-span-5 p-5 sm:my-2 glass">
+        className="grid grid-cols-2 md:col-span-5 p-2 sm:p-5 sm:my-2 glass">
         <img className="w-[400px] " src={profilepic} alt="Profile Pic" />
         <div className="my-auto md:ml-6 ml-2 flex-col text-gray-200">
-          <p className="text-lg sm:text-3xl font-bold py-1">
+          <p className="text-xl sm:text-3xl font-bold py-1">
             Hi Fellas!
             <br /> I am Sakti Padmayoga
             <div className="text-base sm:text-2xl">
