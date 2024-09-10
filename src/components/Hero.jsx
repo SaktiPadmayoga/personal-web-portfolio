@@ -25,12 +25,12 @@ const Hero = () => {
         className="grid grid-cols-2 md:col-span-5 p-2 md:m-0 glass">
         <img className="w-[400px] " src={profilepic} alt="Profile Pic" />
         <div className="my-auto ml-2 flex-col text-gray-200">
-          <p className="text-2xl md:text-3xl font-bold py-1">
+          <p className="text-xl md:text-3xl font-bold py-1">
             Hi! I am Sakti Padmayoga
             <br /> a/an
             <TypeAnimation sequence={[" Web Developer", 1000, " Software Developer", 1000, " UI Designer", 1000]} wrapper="span" speed={50} repeat={Infinity} />
           </p>
-          <p className="text-lg md:text:2xl text-gray-400 font-semibold mt-2">with 0 year of experience :D.</p>
+          <p className="text-lg md:text:2xl text-gray-400 font-semibold mt-2 hidden">with 0 year of experience :D.</p>
           <button className="mt-4 px-4 py-2 text-sm font-bold text-gray-200 bg-primary-color rounded-lg ">Download CV  💌</button>
           <button className="mt-4 ml-3 px-4 py-2 text-sm font-bold text-gray-200 bg-zinc-800 rounded-lg hover:bg-slate-600 transition duration-300">
             <a href="/about">About Me →</a>
@@ -49,7 +49,7 @@ const Hero = () => {
           }} 
           exit={{ opacity: 0, y: -100, transition: { delay: 0.5, duration: 0.5, ease: "easeOut" } }}
           exitTransition={{ duration: 0.1, ease: "easeOut" }}
-          className="p-12 text-7xl text-center md:mt-2 glass">
+          className="p-8 md:p-12 text-7xl text-center md:mt-2 glass">
           <p className=" text-gray-200 text-2xl font-bold mb-5">Some of My Tech Stack</p>
           <div className="grid grid-cols-4 text-center justify-center gap-2">
             <DiHtml5 className="text-orange-600" />
