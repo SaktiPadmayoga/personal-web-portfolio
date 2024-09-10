@@ -12,7 +12,7 @@ import { div } from "framer-motion/client";
 const Hero = () => {
   return (
     <div className="flex justify-center items-center min-h-[80vh]">
-      <div className=" flex-col justify-center max-w-[1200px] mx-auto grid md:grid-cols-8 gap-6 p-5 mb-5 md:px-5 md:mb-0 h-full" id="home">
+      <div className=" flex-col justify-center max-w-[1200px] mx-auto grid md:grid-cols-8 gap-6 p-5 mb-5 md:px-5  h-full" id="home">
         <motion.div 
           initial={{ opacity: 0, scale: 0.7 }}
           animate={{ opacity: 1, scale: 1 }}
