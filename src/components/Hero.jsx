@@ -57,7 +57,7 @@ const Hero = () => {
             exitTransition={{ duration: 0.1, ease: "easeOut" }}
             className="p-8 md:p-12 text-7xl text-center md:mt-2 glass">
             <p className=" text-gray-200 text-2xl font-bold mb-5">Some of My Tech Stack</p>
-            <div className="grid grid-cols-4 text-center justify-center gap-2">
+            <div className="grid grid-cols-4 text-center justify-center sm:gap-2 gap-5">
               <DiHtml5 className="text-orange-600" />
               <DiCss3 className="text-blue-600" />
               <DiBootstrap className="text-purple-600" />
