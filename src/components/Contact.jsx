@@ -58,7 +58,7 @@ const Contact = () => {
       exit={{ opacity: 0, x:50, transition: { delay: 0, duration: 0.5, ease: "easeOut" }}}
       exitTransition={{ duration: 0.5, ease: "easeOut", delay:0 }}
       className="md:col-span-6 p-4 md:ml-9 flex text-black">
-        <form action="https://getform.io/f/bnlekwkb" method="POST" className='w-full p-5 md:p-10'>
+        <form action="https://getform.io/f/agdywrkb" method="POST" className='w-full p-5 md:p-10'>
           <input 
             type="text"
             id="name"
